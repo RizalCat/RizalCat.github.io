@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="初识 JAVAJAVA 的诞生 1972 年 C 诞生  贴近硬件，效率高 操作系统，编译器，数据库，网络系统等 指针和内存管理   1982 年 C++  面向对象 兼容 C 图形领域、游戏等   建立新语言 JAVA  语法相似 C 没有指针 没有内存管理 真正的可移植性 面向对象 类型安全 高质量类库 ……  1985 年  图形界面程序（Applet） J2SE 占领桌面（界面不美观，需要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rizal">
+<meta property="og:url" content="http://yoursite.com/tempPosts/Java1.html">
+<meta property="og:site_name" content="Rizal">
+<meta property="og:description" content="初识 JAVAJAVA 的诞生 1972 年 C 诞生  贴近硬件，效率高 操作系统，编译器，数据库，网络系统等 指针和内存管理   1982 年 C++  面向对象 兼容 C 图形领域、游戏等   建立新语言 JAVA  语法相似 C 没有指针 没有内存管理 真正的可移植性 面向对象 类型安全 高质量类库 ……  1985 年  图形界面程序（Applet） J2SE 占领桌面（界面不美观，需要">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/Pic/JDK%E3%80%81JRE%E3%80%81JVM.png">
+<meta property="article:published_time" content="2020-06-27T13:59:08.715Z">
+<meta property="article:modified_time" content="2020-06-01T11:09:54.712Z">
+<meta property="article:author" content="RizalCat">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/Pic/JDK%E3%80%81JRE%E3%80%81JVM.png">
+
+<link rel="canonical" href="http://yoursite.com/tempPosts/Java1">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title> | Rizal
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Rizal</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1 id="初识-JAVA"><a href="#初识-JAVA" class="headerlink" title="初识 JAVA"></a>初识 JAVA</h1><h2 id="JAVA-的诞生"><a href="#JAVA-的诞生" class="headerlink" title="JAVA 的诞生"></a>JAVA 的诞生</h2><ol>
+<li><p>1972 年 C 诞生</p>
+<ul>
+<li>贴近硬件，效率高</li>
+<li>操作系统，编译器，数据库，网络系统等</li>
+<li>指针和内存管理</li>
+</ul>
+</li>
+<li><p>1982 年 C++</p>
+<ul>
+<li>面向对象</li>
+<li>兼容 C</li>
+<li>图形领域、游戏等</li>
+</ul>
+</li>
+<li><p>建立新语言 JAVA</p>
+<ul>
+<li>语法相似 C</li>
+<li>没有指针</li>
+<li>没有内存管理</li>
+<li>真正的可移植性</li>
+<li>面向对象</li>
+<li>类型安全</li>
+<li>高质量类库</li>
+<li>……</li>
+</ul>
+<p>1985 年</p>
+<ol>
+<li>图形界面程序（Applet）</li>
+<li>J2SE 占领桌面（界面不美观，需要虚拟机）</li>
+<li>J2ME 占领手机</li>
+<li>J2EE 占领服务器</li>
+</ol>
+<p>JAVA 三高：高可用、高性能、高并发。</p>
+</li>
+</ol>
+<h2 id="JAVA-三大版本"><a href="#JAVA-三大版本" class="headerlink" title="JAVA 三大版本"></a>JAVA 三大版本</h2><p>Write once, Run anywhere.(JVM)</p>
+<ol>
+<li>JavaSE:标准版（桌面程序，控制台开发）</li>
+<li>JavaME:嵌入式开发</li>
+<li>JavaEE：企业级开发（web 端，服务器开发）</li>
+</ol>
+<h2 id="JDK、JRE、JVM"><a href="#JDK、JRE、JVM" class="headerlink" title="JDK、JRE、JVM"></a>JDK、JRE、JVM</h2><ul>
+<li>Java Development Kit</li>
+<li>Java Runtime Environment</li>
+<li>Java Virtual Machine</li>
+</ul>
+<p><img src="../../Pic/JDK%E3%80%81JRE%E3%80%81JVM.png" alt="JDK、JRE、JVM"></p>
+<h2 id="JAVA-程序运行机制"><a href="#JAVA-程序运行机制" class="headerlink" title="JAVA 程序运行机制"></a>JAVA 程序运行机制</h2><p>区别于其执行的时机</p>
+<ul>
+<li>编译型（complie，执行速度快）</li>
+<li>解释型（explain，开发对速度要求不高的网页等）</li>
+</ul>
+<h2 id="JAVA-数据类型（强类型语言）"><a href="#JAVA-数据类型（强类型语言）" class="headerlink" title="JAVA 数据类型（强类型语言）"></a>JAVA 数据类型（强类型语言）</h2><ol>
+<li><p>要求变量的使用要严格符合规定，先定义后使用</p>
+<ul>
+<li>安全性高但速度慢</li>
+</ul>
+</li>
+<li><p>Java 数据类型分为两大类</p>
+<ol>
+<li><p>基本类型（primitive type）</p>
+<ol>
+<li><p>数值类型</p>
+<ol>
+<li><p>整数类型</p>
+<ol>
+<li><p>byte 占 1 个字节范围：-128-127</p>
+</li>
+<li><p>short 占 2 个字节范围：-32768-32767</p>
+</li>
+<li><p>int 占 4 个字节范围:-2147483548-2147483547</p>
+</li>
+<li><p>long 占 8 个字节范围：-9223372036854775808-9223372036854775807</p>
+<ul>
+<li>long 定义时在数字后+L</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> = <span class="number">30F</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>浮点类型</p>
+<ol>
+<li><p>float 占 4 个字节范围</p>
+<ul>
+<li>long 定义时在数字后+L</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> = <span class="number">50.1F</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>double 占 8 个字节范围</p>
+</li>
+</ol>
+</li>
+<li><p>字符类型</p>
+<ol>
+<li>char 占 2 个字节范围</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>boolean 类型（占 1 位，1bit，1B = 8Bit）</p>
+</li>
+</ol>
+</li>
+<li><p>引用类型（reference type）</p>
+<ol>
+<li>类</li>
+<li>接口</li>
+<li>数组</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="进制拓展"><a href="#进制拓展" class="headerlink" title="进制拓展"></a>进制拓展</h3><ol>
+<li>整数</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> i2 = <span class="number">010</span>;   <span class="comment">//八进制0</span></span><br><span class="line"><span class="keyword">int</span> i3 = <span class="number">0x10</span>;  <span class="comment">//十六进制0x</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>浮点数<br>最好完全避免使用浮点数进行比较（使用 BigDecimal Class）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f = <span class="number">0.1f</span>;</span><br><span class="line"><span class="keyword">double</span> d = <span class="number">1.0</span>/<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结果不相同</p>
+<h3 id="字符拓展"><a href="#字符拓展" class="headerlink" title="字符拓展"></a>字符拓展</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Unicode编码 2字节 65536个符号</span></span><br><span class="line"><span class="keyword">char</span> c1 = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">char</span> c2 = <span class="string">'中'</span>;</span><br><span class="line">System.out.println(c1);<span class="comment">//a</span></span><br><span class="line">System.out.println(<span class="keyword">int</span> (c1));<span class="comment">//97</span></span><br><span class="line">System.out.println(c2);<span class="comment">//中</span></span><br><span class="line">System.out.println(<span class="keyword">int</span>(c2));<span class="comment">//20013</span></span><br></pre></td></tr></table></figure>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识-JAVA"><span class="nav-number">1.</span> <span class="nav-text">初识 JAVA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-的诞生"><span class="nav-number">1.1.</span> <span class="nav-text">JAVA 的诞生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-三大版本"><span class="nav-number">1.2.</span> <span class="nav-text">JAVA 三大版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK、JRE、JVM"><span class="nav-number">1.3.</span> <span class="nav-text">JDK、JRE、JVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-程序运行机制"><span class="nav-number">1.4.</span> <span class="nav-text">JAVA 程序运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-数据类型（强类型语言）"><span class="nav-number">1.5.</span> <span class="nav-text">JAVA 数据类型（强类型语言）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进制拓展"><span class="nav-number">1.5.1.</span> <span class="nav-text">进制拓展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符拓展"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符拓展</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">RizalCat</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RizalCat</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

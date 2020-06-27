@@ -20,15 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Rizal">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="知乎热榜爬取1234567891011121314import requestsfrom bs4 import BeautifulSouplink &#x3D; &#39;https:&#x2F;&#x2F;www.zhihu.com&#x2F;hot&#39;head &#x3D; &amp;#123;    &#39;cookie&#39;: &#39;cookie信息&#39;,    &#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Macintosh; Intel Mac OS X 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spider">
+<meta property="og:url" content="http://yoursite.com/2020/06/27/Spider/index.html">
 <meta property="og:site_name" content="Rizal">
+<meta property="og:description" content="知乎热榜爬取1234567891011121314import requestsfrom bs4 import BeautifulSouplink &#x3D; &#39;https:&#x2F;&#x2F;www.zhihu.com&#x2F;hot&#39;head &#x3D; &amp;#123;    &#39;cookie&#39;: &#39;cookie信息&#39;,    &#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Macintosh; Intel Mac OS X 1">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/06/27/img/Spider1.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/27/img/Spider2.png">
+<meta property="article:published_time" content="2020-06-27T13:32:51.836Z">
+<meta property="article:modified_time" content="2020-06-27T13:58:04.734Z">
 <meta property="article:author" content="RizalCat">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/27/img/Spider1.png">
 
-<link rel="canonical" href="http://yoursite.com/archives/">
+<link rel="canonical" href="http://yoursite.com/2020/06/27/Spider/">
 
 
 <script id="page-configurations">
@@ -36,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Rizal</title>
+  <title>Spider | Rizal</title>
   
 
 
@@ -139,70 +146,86 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 2 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/Spider/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="RizalCat">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rizal">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spider
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-27 21:32:51 / Modified: 21:58:04" itemprop="dateCreated datePublished" datetime="2020-06-27T21:32:51+08:00">2020-06-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <h1 id="知乎热榜爬取"><a href="#知乎热榜爬取" class="headerlink" title="知乎热榜爬取"></a>知乎热榜爬取</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">link = <span class="string">'https://www.zhihu.com/hot'</span></span><br><span class="line">head = &#123;</span><br><span class="line">    <span class="string">'cookie'</span>: <span class="string">'cookie信息'</span>,</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.0; rv:77.0) Gecko/20100101 Firefox/77.0'</span>&#125;</span><br><span class="line">r = requests.get(link, headers=head)</span><br><span class="line">soup = BeautifulSoup(r.text, <span class="string">'lxml'</span>)</span><br><span class="line">title_list = soup.find_all(<span class="string">'section'</span>, class_=<span class="string">'HotItem'</span>)</span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> title_list:</span><br><span class="line">    index = each.find(<span class="string">'div'</span>, class_=<span class="string">'HotItem-rank'</span>).text</span><br><span class="line">    title = each.find(<span class="string">'h2'</span>, class_=<span class="string">'HotItem-title'</span>).text</span><br><span class="line">    print(index, title)</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-27T21:32:51+08:00"
-              content="2020-06-27">
-          06-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/27/Spider/" itemprop="url">
-            <span itemprop="name">Spider</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-11T15:05:55+08:00"
-              content="2020-06-11">
-          06-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/11/Pillow/" itemprop="url">
-            <span itemprop="name">Pillow</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<ol>
+<li>查看知乎热榜需要登陆，所以需要传入cookie。</li>
+<li>使用requests中的get方法传递headers URL参数。</li>
+<li>使用bs4的初始化操作，用文本创建一个BeautifulSoup对象，手动指定解析器lxml。</li>
+<li>bs4提供了获取某个结构化元素及属性的方法，但不是所有信息都可以简单的通过结构化获取，通常使用find和find_all方法进行查找。find_all返回的是一个由bs4.element.Tag对象组成的list。</li>
+<li>定位rank和HotItem在页面中的位置<br><img src="../img/Spider1.png" alt="img1"></li>
+<li>使用循环遍历div和h2标签并输出。<br><img src="../img/Spider2.png" alt="img2"></li>
+</ol>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/11/Pillow/" rel="prev" title="Pillow">
+      <i class="fa fa-chevron-left"></i> Pillow
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -255,6 +278,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知乎热榜爬取"><span class="nav-number">1.</span> <span class="nav-text">知乎热榜爬取</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
